@@ -40,6 +40,7 @@
       
       Main Arguments:
         linkage_method = complete
+        dist_fun = Rfast::Dist
       
       Computational engine: stats 
       
@@ -54,6 +55,7 @@
       Main Arguments:
         num_clusters = 10
         linkage_method = complete
+        dist_fun = Rfast::Dist
       
       Computational engine: stats 
       
@@ -68,6 +70,7 @@
       Main Arguments:
         num_clusters = tune()
         linkage_method = complete
+        dist_fun = Rfast::Dist
       
       Computational engine: stats 
       
