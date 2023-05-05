@@ -72,6 +72,16 @@ make_hier_clust <- function() {
     has_submodel = TRUE
   )
 
+  modelenv::set_model_arg(
+    model = "hier_clust",
+    eng = "stats",
+    exposed = "dist_fun",
+    original = "dist_fun",
+    func = list(pkg = "tidyclust", fun = "dist_fun"),
+    has_submodel = TRUE
+  )
+
+
   modelenv::set_pred(
     model = "hier_clust",
     eng = "stats",
