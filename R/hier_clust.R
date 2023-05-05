@@ -26,27 +26,25 @@
 #'
 #' hier_clust()
 #' @export
-hier_clust <-
-  function(mode = "partition",
-           engine = "stats",
-           num_clusters = NULL,
-           cut_height = NULL,
-           linkage_method = "complete") {
-    args <- list(
-      num_clusters = enquo(num_clusters),
-      cut_height = enquo(cut_height),
-      linkage_method = enquo(linkage_method)
-    )
-
-    new_cluster_spec(
-      "hier_clust",
-      args = args,
-      eng_args = NULL,
-      mode = mode,
-      method = NULL,
-      engine = engine
-    )
-  }
+hier_clust <- function(
+    mode = "partition", engine = "stats", num_clusters = NULL,
+    cut_height = NULL, linkage_method = "complete", dist_fun = Rfast::Dist
+  ) {
+  args <- list(
+    num_clusters = rlang::enquo(num_clusters),
+    cut_height = rlang::enquo(cut_height),
+    linkage_method = rlang::enquo(linkage_method),
+    dist_fun = rlang::enquo(dist_fun)
+  )
+  tidyclust::new_cluster_spec(
+    "hier_clust",
+    args = args,
+    eng_args = NULL,
+    mode = mode,
+    method = NULL,
+    engine = engine
+  )
+}
 
 #' @export
 print.hier_clust <- function(x, ...) {
