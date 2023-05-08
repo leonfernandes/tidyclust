@@ -1,3 +1,32 @@
+# test_that("primary arguments", {
+#   basic <- hier_clust(mode = "partition")
+#   basic_stats <- translate_tidyclust(basic %>% set_engine("stats"))
+#   expect_equal(
+#     basic_stats$method$fit$args,
+#     list(
+#       data = rlang::expr(missing_arg()),
+#       linkage_method = new_empty_quosure("complete"),
+#       dist_fun = new_empty_quosure(rlang::expr(Rfast::Dist))
+#     )
+#   )
+# })
+
+# test_that("engine arguments", {
+#   stats_print <- hier_clust(mode = "partition")
+#   expect_equal(
+#     translate_tidyclust(
+#       stats_print %>%
+#         set_engine("stats", members = NULL)
+#     )$method$fit$args,
+#     list(
+#       data = rlang::expr(missing_arg()),
+#       linkage_method = new_empty_quosure("complete"),
+#       dist_fun = new_empty_quosure(rlang::expr(Rfast::Dist)),
+#       members = new_empty_quosure(NULL)
+#     )
+#   )
+# })
+
 test_that("bad input", {
   expect_snapshot(
     error = TRUE,
